@@ -8,7 +8,7 @@
   const setMenu = open => {
     nav?.classList.toggle('is-open', open);
     toggle?.setAttribute('aria-expanded', String(open));
-    if (toggle) toggle.textContent = open ? 'Fechar ×' : 'Menu ☰';
+    if (toggle) { toggle.textContent = open ? '×' : '☰'; toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); }
   };
   toggle?.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
   document.addEventListener('keydown', event => {
