@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+Options -Indexes
+ErrorDocument 404 /404.html
+<FilesMatch "^(package.*\.json|README\.md)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(?:backup|node_modules|scripts|dist|hostinger)(?:/|$) - [F,L]
+</IfModule>
